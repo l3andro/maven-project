@@ -9,6 +9,7 @@ pipeline {
                         script: "gitleaks detect --source . -v --exit-code 0 --redact --report-format junit --report-path gitleaks-report.xml", 
                         returnStdout:true)
                     //echo "${teste}"
+                    sh (script: "ls -la")
                 }
             }
             post {
