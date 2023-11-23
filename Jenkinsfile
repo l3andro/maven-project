@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     //gitLeaksDetection()
+                    sh (script: "ls -la")
                     teste = sh (
                         script: "gitleaks detect --source . -v --exit-code 0 --redact --report-format junit --report-path gitleaks-report.xml", 
                         returnStdout:true)
