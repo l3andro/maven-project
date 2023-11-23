@@ -17,7 +17,7 @@ pipeline {
                 always {
                     script{
                         catchError() {
-                            junit 'gitleaks-report.html'
+                            junit 'gitleaks-report.xml'
                         }
                     }
                 }
