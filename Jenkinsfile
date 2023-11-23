@@ -10,7 +10,7 @@ pipeline {
                         //script: "gitleaks detect --source . -v --redact --report-path=gitleaks-report.json", 
                         returnStdout:true)
                     //echo "${teste}"
-                    sh (script: "ls -la")
+                    sh (script: "cat gitleaks-report.json")
                 }
             }
             // post {
