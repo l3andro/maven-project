@@ -1,6 +1,7 @@
 pipeline {
     agent any
     stages {
+        stage("Secrets Detection") {
             steps {
                 script {
                     //gitLeaksDetection()
@@ -19,5 +20,6 @@ pipeline {
             //         }
             //     }
             // }
+        }
     }
 }
