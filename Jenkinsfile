@@ -7,7 +7,7 @@ pipeline {
                     //gitLeaksDetection()
                     sh (script: "ls -la")
                     teste = sh (
-                        script: "gitleaks detect --source . -v --exit-code 0 --redact --report-format junit --report-path gitleaks-report.xml", 
+                        script: "gitleaks detect -v --redact --report-format=sarif --report-path=gitleaks-report.sarif --log-level=debug", 
                         returnStdout:true)
                     //echo "${teste}"
                     sh (script: "ls -la")
