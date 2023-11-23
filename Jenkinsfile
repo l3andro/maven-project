@@ -13,15 +13,13 @@ pipeline {
                     sh (script: "cat gitleaks-report.json")
                 }
             }
-            // post {
-            //     always {
-            //         script{
-            //             catchError() {
-            //                 archiveArtifacts artifacts: 'gitleaks-report.json'
-            //             }
-            //         }
-            //     }
-            // }
+            post {
+                always {
+                    script{
+                        archiveArtifacts artifacts: 'gitleaks-report.json'
+                    }
+                }
+            }
         }
     }
 }
