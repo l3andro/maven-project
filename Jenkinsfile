@@ -6,7 +6,7 @@ pipeline {
                 script {
                     //gitLeaksDetection()
                     teste = sh (
-                        script: "gitleaks detect --source=. -v --exit-code 0 --redact --report-format=junit --report-path=gitleaks-report.xml", 
+                        script: "gitleaks detect --source . -v --exit-code 0 --redact --report-format junit --report-path gitleaks-report.xml", 
                         returnStdout:true)
                     //echo "${teste}"
                 }
