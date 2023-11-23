@@ -17,6 +17,7 @@ pipeline {
                 always {
                     script{
                         archiveArtifacts artifacts: 'gitleaks-report.json'
+                        sh (script: "rm -rf *")
                     }
                 }
             }
