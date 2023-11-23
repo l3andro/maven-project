@@ -7,7 +7,7 @@ pipeline {
                     //gitLeaksDetection()
                     sh (script: "ls -la")
                     teste = sh (
-                        script: "trufflehog filesystem .",
+                        script: "horusec -p='./'",
                         //script: "gitleaks detect --source . -v --redact --report-path=gitleaks-report.json", 
                         returnStdout:true)
                     //echo "${teste}"
