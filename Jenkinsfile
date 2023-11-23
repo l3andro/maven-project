@@ -1,11 +1,23 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
             steps {
-                echo 'Building..'
+                script {
+                    //gitLeaksDetection()
+                    teste = sh (
+                        script: "./gitleaks detect --source=. -v --exit-code 0 --redact --report-format=junit --report-path=gitleaks-report.xml", 
+                        returnStdout:true)
+                    //echo "${teste}"
+                }
             }
-        }
+            // post {
+            //     always {
+            //         script{
+            //             catchError() {
+            //                 junit 'gitleaks-report.html'
+            //             }
+            //         }
+            //     }
+            // }
     }
 }
