@@ -6,7 +6,7 @@ pipeline {
                 script {
                     //gitLeaksDetection()
                     teste = sh (
-                        script: "horusec start -p . -D --enable-git-history --log-level debug -o sonarqube",
+                        script: "horusec start -p . -D --enable-git-history --log-level debug -o sonarqube -O gitleaks-report.xml",
                         //script: "gitleaks detect --source . -v --redact --report-path=gitleaks-report.json", 
                         returnStdout:true)
                     //echo "${teste}"
